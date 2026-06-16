@@ -1,8 +1,8 @@
 package com.example.demo.repository;
  import com.example.demo.entity.Organization;
 import org.springframework.data.jpa.repository.JpaRepository;
-import org.springframework.stereotype.Repository;
-@Repository
+// import org.springframework.stereotype.Repository;
+
 public interface OrganizationRepository extends JpaRepository<Organization, Long> {
 
     // add cac ham vao

@@ -3,7 +3,6 @@ import com.example.demo.dto.OrganizationRequestDTO;
 import com.example.demo.dto.OrganizationResponseDTO;
 import java.util.List;
 import java.util.stream.Collectors;
-import org.hibernate.internal.build.AllowNonPortable;
 import org.springframework.stereotype.Service;
 import com.example.demo.repository.OrganizationRepository;
 import com.example.demo.entity.Organization;
