@@ -62,3 +62,29 @@ Content-Type: application/json
 GET http://localhost:8080/api/users/me
 Content-Type: application/json
 Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBkaHNvZnR3YXJlLmNvbSIsInVzZXJJZCI6MSwib3JnYW5pemF0aW9uSWQiOjEsImlhdCI6MTc4MTYzMDI4MCwiZXhwIjoxNzgxNzE2NjgwfQ.B-P1S52wCXYpO0y9KFNm7pFqnChVV0bXRWnSYyv-IURLZpgpqi_8dUEkFDn7SlDI
+
+
+### ========================================
+### QUẢN LÝ SẢN PHẨM / DỊCH VỤ (CHẶNG 1)
+### ========================================
+
+### 4. Tạo sản phẩm mới (Nhớ dán Token hợp lệ vào nhé)
+POST http://localhost:8080/api/products
+Content-Type: application/json
+Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
+
+{
+    "sku": "SP-001",
+    "name": "Dịch vụ bảo trì phần mềm (1 Tháng)",
+    "description": "Bảo trì và fix bug định kỳ",
+    "type": "SERVICE",
+    "unit": "Tháng",
+    "unitPrice": 5000000.00,
+    "taxRate": 8.00,
+    "active": true
+}
+
+### 5. Lấy danh sách sản phẩm (Sẽ tự động bị lọc theo ID Công ty)
+GET http://localhost:8080/api/products
+Content-Type: application/json
+Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
