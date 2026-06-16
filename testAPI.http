@@ -33,3 +33,32 @@ Content-Type: application/json
     "email": "admin@dhsoftware.com",
     "password": "Password123!"
 }
+
+
+
+### ========================================
+### KIỂM TRA CHỐT BẢO VỆ (TEST SECURITY)
+### ========================================
+
+### KỊCH BẢN 1: Cố tình vượt rào (Không trình thẻ Token)
+### Kết quả mong đợi: Lỗi 403 Forbidden (Bị từ chối)
+GET http://localhost:8080/api/users/me
+Content-Type: application/json
+
+
+### KỊCH BẢN 2: Đăng nhập để xin cấp Thẻ (Token)
+POST http://localhost:8080/api/auth/login
+Content-Type: application/json
+
+{
+    "email": "admin@dhsoftware.com",
+    "password": "Password123!"
+}
+### -> SAU KHI CHẠY KỊCH BẢN 2, HÃY COPY CHUỖI "accessToken" BẮT ĐẦU BẰNG "eyJ..." TRẢ VỀ Ở MÀN HÌNH BÊN PHẢI
+
+
+### KỊCH BẢN 3: Trình thẻ để vào lấy dữ liệu
+### -> HÃY DÁN CHUỖI TOKEN BẠN VỪA COPY VÀO ĐẰNG SAU CHỮ "Bearer " BÊN DƯỚI RỒI MỚI BẤM SEND
+GET http://localhost:8080/api/users/me
+Content-Type: application/json
+Authorization: Bearer eyJhbGciOiJIUzM4NCJ9.eyJzdWIiOiJhZG1pbkBkaHNvZnR3YXJlLmNvbSIsInVzZXJJZCI6MSwib3JnYW5pemF0aW9uSWQiOjEsImlhdCI6MTc4MTYzMDI4MCwiZXhwIjoxNzgxNzE2NjgwfQ.B-P1S52wCXYpO0y9KFNm7pFqnChVV0bXRWnSYyv-IURLZpgpqi_8dUEkFDn7SlDI
