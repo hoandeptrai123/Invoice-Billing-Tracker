@@ -1,0 +1,14 @@
+### 1. Test tạo Công ty mới (POST)
+POST http://localhost:8080/api/organizations
+Content-Type: application/json
+
+{
+    "name": "Công ty TNHH Phần mềm ĐH",
+    "taxCode": "0312345678",
+    "email": "contact@dhsoftware.com",
+    "phone": "0901234567",
+    "address": "Quận 1, TP.HCM"
+}
+
+### 2. Test lấy danh sách toàn bộ Công ty (GET)
+GET http://localhost:8080/api/organizations
