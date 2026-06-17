@@ -31,10 +31,10 @@ public class User extends BaseTenantEntity {
     @Column(name = "last_login")
     private LocalDateTime lastLogin;
 
-    // --- CONSTRUCTOR THUẦN ---
+    
     public User() {}
 
-    // --- GETTER & SETTER THUẦN ---
+   
     public String getEmail() { return email; }
     public void setEmail(String email) { this.email = email; }
 

@@ -24,13 +24,13 @@ public class JwtAuthenticationFilter extends OncePerRequestFilter {
     protected void doFilterInternal(HttpServletRequest request, HttpServletResponse response, FilterChain filterChain)
             throws ServletException, IOException {
         try {
-            // 1. Lấy token từ header của request
+            // 1. Lay token từ header cua request
             String token = getJwtFromRequest(request);
 
-            // 2. Nếu có token và token chuẩn
+            // 2. check token 
             if (StringUtils.hasText(token) && jwtUtil.validateToken(token)) {
                 
-                // Lấy email và organizationId ra
+                // Lay email và organizationId ra
                 String email = jwtUtil.getEmailFromToken(token);
                 Long orgId = jwtUtil.getOrganizationIdFromToken(token);
 

@@ -88,3 +88,28 @@ Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
 GET http://localhost:8080/api/products
 Content-Type: application/json
 Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
+
+### ========================================
+### QUẢN LÝ KHÁCH HÀNG (CHẶNG 1)
+### ========================================
+
+### 6. Thêm Khách hàng mới
+POST http://localhost:8080/api/customers
+Content-Type: application/json
+Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
+
+{
+    "customerType": "DOANH_NGHIỆP",
+    "companyName": "Công ty Cổ phần Công nghệ XYZ",
+    "contactName": "Nguyễn Văn A",
+    "email": "contact@xyz.com",
+    "phone": "0901234567",
+    "taxCode": "0312345678",
+    "billingAddress": "Tòa nhà ABC, Quận 1, TP.HCM",
+    "notes": "Khách hàng VIP"
+}
+
+### 7. Lấy danh sách Khách hàng
+GET http://localhost:8080/api/customers
+Content-Type: application/json
+Authorization: Bearer <DÁN_TOKEN_CỦA_BẠN_VÀO_ĐÂY>
