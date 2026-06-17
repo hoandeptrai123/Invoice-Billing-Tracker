@@ -5,7 +5,7 @@ import java.util.List;
 public interface OrganizationService {
     OrganizationResponseDTO createOrganization(OrganizationRequestDTO request);
     // OrganizationResponseDTO getOrganizationById(Long id);
-    List<OrganizationResponseDTO> getAllOrganizations();
+    // List<OrganizationResponseDTO> getAllOrganizations();
     // OrganizationResponseDTO updateOrganization(Long id, OrganizationRequestDTO request);
     // void deleteOrganization(Long id);
 }

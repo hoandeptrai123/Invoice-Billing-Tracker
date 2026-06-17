@@ -31,6 +31,7 @@ public class AuthServiceImpl implements AuthService {
         user.setPasswordHash(passwordEncoder.encode(request.getPassword()));
         user.setFirstName(request.getFirstName());
         user.setLastName(request.getLastName());
+        user.setPhone(request.getPhone()); // ---> DÒNG MỚI THÊM VÀO
         user.setOrganizationId(request.getOrganizationId());
         user.setStatus("ACTIVE");
 
@@ -47,7 +48,7 @@ public class AuthServiceImpl implements AuthService {
             throw new RuntimeException("Sai mật khẩu!");
         }
 
-        user.setLastLogin(LocalDateTime.now());
+        user.setLastLoginAt(LocalDateTime.now());
         userRepository.save(user);
 
         String token = jwtUtil.generateToken(user);
